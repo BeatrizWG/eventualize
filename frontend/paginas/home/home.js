@@ -1,11 +1,31 @@
 const API_URL = "http://localhost:8080/api/auth";
 
-/* ================= UTIL ================= */
-
-function limparErrosCampos(prefixo = "") {
+function limparErros(prefixo) {
     document
-        .querySelectorAll(`[id^="erro-${prefixo}"]`)
+        .querySelectorAll(`[id^="${prefixo}"]`)
         .forEach(el => el.textContent = "");
+}
+
+function limparInputs(prefixo) {
+    document
+        .querySelectorAll(`[id^="${prefixo}"]`)
+        .forEach(el => el.value = "");
+}
+
+function limparLogin() {
+    limparInputs("login");
+    limparErros("erro-login-");
+    const msg = document.getElementById("msgLogin");
+    msg.textContent = "";
+    msg.classList.remove("erro", "sucesso");
+}
+
+function limparCadastro() {
+    limparInputs("cadastro");
+    limparErros("erro-");
+    const msg = document.getElementById("msgCadastro");
+    msg.textContent = "";
+    msg.classList.remove("erro", "sucesso");
 }
 
 function mostrarErrosCampos(erros, prefixo = "") {
@@ -15,52 +35,35 @@ function mostrarErrosCampos(erros, prefixo = "") {
     });
 }
 
-function limparLogin() {
-    document.getElementById("loginEmail").value = "";
-    document.getElementById("loginSenha").value = "";
-    document.getElementById("msgLogin").textContent = "";
-    document.getElementById("msgLogin").classList.remove("erro", "sucesso");
-    limparErrosCampos("login-");
-}
+const abaLogin = document.getElementById("abaLogin");
+const abaCadastro = document.getElementById("abaCadastro");
+const login = document.getElementById("login");
+const cadastro = document.getElementById("cadastro");
 
-function limparCadastro() {
-    document.getElementById("cadastroNome").value = "";
-    document.getElementById("cadastroEmail").value = "";
-    document.getElementById("cadastroMatricula").value = "";
-    document.getElementById("cadastroSenha").value = "";
-    document.getElementById("cadastroConfirmar").value = "";
-    document.getElementById("msgCadastro").textContent = "";
-    document.getElementById("msgCadastro").classList.remove("erro", "sucesso");
-}
-
-/* ================= ABAS ================= */
-
-document.getElementById("abaLogin").addEventListener("click", () => {
+abaLogin.addEventListener("click", () => {
     abaLogin.classList.add("ativa");
     abaCadastro.classList.remove("ativa");
     login.classList.add("ativa");
     cadastro.classList.remove("ativa");
     limparCadastro();
-    limparErrosCampos();
 });
 
-document.getElementById("abaCadastro").addEventListener("click", () => {
+abaCadastro.addEventListener("click", () => {
     abaCadastro.classList.add("ativa");
     abaLogin.classList.remove("ativa");
     cadastro.classList.add("ativa");
     login.classList.remove("ativa");
-    limparLogin(); 
+    limparLogin();
 });
-
-/* ================= LOGIN ================= */
 
 document.getElementById("btnLogin").addEventListener("click", async () => {
     const email = document.getElementById("loginEmail").value;
     const senha = document.getElementById("loginSenha").value;
     const msg = document.getElementById("msgLogin");
 
-    limparErrosCampos("login-");
+    limparErros("erro-login-");
     msg.textContent = "";
+    msg.classList.remove("erro", "sucesso");
 
     if (!email || !senha) {
         msg.textContent = "Preencha todos os campos.";
@@ -70,11 +73,13 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
 
     const response = await fetch(`${API_URL}/login`, {
         method: "POST",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha })
     });
 
     if (response.ok) {
+        limparLogin()
         window.location.href = "../listaEventos/listaEventos.html";
     } else {
         const contentType = response.headers.get("content-type");
@@ -89,8 +94,6 @@ document.getElementById("btnLogin").addEventListener("click", async () => {
     }
 });
 
-/* ================= CADASTRO ================= */
-
 document.getElementById("btnCadastro").addEventListener("click", async () => {
     const nome = document.getElementById("cadastroNome").value;
     const email = document.getElementById("cadastroEmail").value;
@@ -99,8 +102,9 @@ document.getElementById("btnCadastro").addEventListener("click", async () => {
     const confirmar = document.getElementById("cadastroConfirmar").value;
     const msg = document.getElementById("msgCadastro");
 
-    limparErrosCampos();
+    limparErros("erro-");
     msg.textContent = "";
+    msg.classList.remove("erro", "sucesso");
 
     if (!nome || !email || !matricula || !senha || !confirmar) {
         msg.textContent = "Preencha todos os campos.";
@@ -109,8 +113,8 @@ document.getElementById("btnCadastro").addEventListener("click", async () => {
     }
 
     if (senha !== confirmar) {
-        document.getElementById("erro-confirmarSenha").textContent =
-            "As senhas não coincidem.";
+        const span = document.getElementById("erro-confirmarSenha");
+        if (span) span.textContent = "As senhas não coincidem.";
         return;
     }
 
@@ -123,15 +127,12 @@ document.getElementById("btnCadastro").addEventListener("click", async () => {
     if (response.status === 201) {
         msg.textContent = "Cadastro realizado com sucesso!";
         msg.classList.add("sucesso");
-
-        limparCadastro()
+        limparCadastro();
     } else {
         const erros = await response.json();
         mostrarErrosCampos(erros);
     }
 });
-
-/* ================= SENHA ================= */
 
 function toggleSenha(id, el) {
     const input = document.getElementById(id);
