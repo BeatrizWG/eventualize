@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.uepb.eventualize.dto.CadastroDTO;
+import br.edu.uepb.eventualize.dto.LoginDTO;
 import br.edu.uepb.eventualize.modelo.Usuario;
 import br.edu.uepb.eventualize.servico.UsuarioServico;
 import jakarta.validation.Valid;
@@ -33,7 +34,7 @@ public class AutenticacaoControlador {
     }
 
     @PostMapping("/login")
-    public Usuario login(@RequestBody Usuario usuario) {
-        return servico.autenticarUsuario(usuario.getEmail(), usuario.getSenha());
+    public Usuario login(@Valid @RequestBody LoginDTO dto) {
+        return servico.autenticarUsuario(dto.getEmail(), dto.getSenha());
     }
 }

@@ -10,8 +10,8 @@ import br.edu.uepb.eventualize.modelo.Usuario;
 @Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long> {
 
-	Optional<Usuario> findByEmailAndSenha(String email, String senha);
     Optional<Usuario> findByEmail(String email);
+    
     Optional<Usuario> findById(Long idUsuario);
     
 }

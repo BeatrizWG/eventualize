@@ -15,7 +15,7 @@ public class CadastroDTO {
     @NotBlank(message = "Email não pode ser vazio")
     @Pattern(
     	    regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z.-]+\\.com$",
-    	    message = "Email deve conter @ e domínio sem números, terminando com .com"
+    	    message = "Formato de email inválido"
     )
     private String email;
 
@@ -29,7 +29,7 @@ public class CadastroDTO {
     @NotBlank(message = "Matrícula não pode ser vazia")
     @Pattern(
         regexp = "^(\\d{7}|\\d{9})$",
-        message = "Matrícula deve ter 7 dígitos (professor) ou 9 dígitos (aluno)"
+        message = "Matrícula deve ter 7 ou 9 dígitos"
     )
     private String matricula;
 
@@ -64,6 +64,5 @@ public class CadastroDTO {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-
 
 }

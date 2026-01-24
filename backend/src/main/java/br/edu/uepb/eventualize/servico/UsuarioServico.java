@@ -25,7 +25,7 @@ public class UsuarioServico {
 
         Usuario usuario;
 
-        int tamanho = dto.getMatricula().length();
+        int tamanho = dto.getMatricula().trim().length();
 
         if (tamanho == 7) {
             Organizador organizador = new Organizador();
