@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventualize</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logoHeader">
+        <img src="../../recursos/imagens/logoSimples.png" alt="logo do Eventualize">
+        <h1>EVENTUALIZE</h1>
+    </div>
+</header>
+
+<div class="pagina">
+    <div class="logoPagina">
+        <img src="../../recursos/imagens/logoSimples.png" alt="logo do Eventualize">
+    </div>
+
+    <div class="texto-lateral">
+        <h1>Eventualize</h1>
+        <p>Plataforma de eventos acadêmicos da UEPB.</p>
+        <p>Estudantes, professores e a comunidade externa podem visualizar eventos, acessar informações completas sobre atividades, horários e locais, além de receber notificações para não perder nenhuma oportunidade. </p>
+    </div>
+
+    <div class="container">
+        <div class="abas">
+            <button id="abaLogin" class="aba ativa">Login</button>
+            <button id="abaCadastro" class="aba">Cadastro</button>
+        </div>
+
+        <div id="login" class="conteudo-aba ativa">
+            <span class="erro-campo" id="erro-login-email"></span>
+            <input type="email" id="loginEmail" placeholder="Email">
+        
+            <span class="erro-campo" id="erro-login-senha"></span>
+            <div class="campo-senha">
+                <input type="password" id="loginSenha" placeholder="Senha">
+                <span class="toggle-senha" onclick="toggleSenha('loginSenha', this)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+            
+            <p class="mensagem" id="msgLogin"></p>
+
+            <a href="../redefinirSenha/redefinirSenha.html" class="esqueceu-conta">Esqueceu a conta? Clique aqui </a>
+
+            <button class="botao-acao" id="btnLogin">Entrar</button>
+            
+        </div>
+
+        <div id="cadastro" class="conteudo-aba">
+            <span class="erro-campo" id="erro-nome"></span>
+            <input type="text" id="cadastroNome" placeholder="Nome">
+        
+            <span class="erro-campo" id="erro-email"></span>
+            <input type="email" id="cadastroEmail" placeholder="Email">
+            
+            <span class="erro-campo" id="erro-matricula"></span>
+            <input type="text" id="cadastroMatricula" placeholder="Matrícula">
+            
+            <span class="erro-campo" id="erro-senha"></span>
+            <div class="campo-senha">
+                <input type="password" id="cadastroSenha" placeholder="Senha">
+                <span class="toggle-senha" onclick="toggleSenha('cadastroSenha', this)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+            
+            <div class="campo-senha">
+                <input type="password" id="cadastroConfirmar" placeholder="Confirme a senha">
+                <span class="toggle-senha" onclick="toggleSenha('cadastroConfirmar', this)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+            </div>
+
+            <p class="mensagem" id="msgCadastro"></p>
+
+            <button class="botao-acao" id="btnCadastro">Cadastrar</button>
+        </div>
+    </div>
+</div>
+
+<script src="home.js"></script>
+</body>
+</html>

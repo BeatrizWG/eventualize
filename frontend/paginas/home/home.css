@@ -1,0 +1,201 @@
+@import url('../../recursos/cores/cores.css');
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../recursos/fontes/Inter/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../recursos/fontes/Inter/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--verde-escuro);
+}
+
+.header {
+    height: 10vh;
+    width: 100vw;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoHeader {
+    display: flex;
+    align-items: center;
+}
+
+.logoHeader h1 {
+    font-weight: 200px;
+    color: var(--cinza-bg);
+    margin-left: 20px;
+}
+
+.logoHeader img {
+    height: 40px;
+}
+
+.texto-lateral,
+.container {
+    min-width: 280px;
+}
+
+.pagina {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.logoPagina img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.texto-lateral {
+    min-width: 300px;
+    max-width: 600px;
+    width: 50%;
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 18px;
+    color: var(--cinza-bg);
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+}
+
+.texto-lateral h1,
+p {
+    margin-bottom: 20px;
+}
+
+.container {
+    min-width: 300px;
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--cinza-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px var(--sombra);
+    margin-bottom: 20px;
+}
+
+.abas {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.aba {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: var(--cinza-card);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.aba.ativa {
+    background-color: var(--verde-escuro);
+    color: var(--cinza-bg);
+}   
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cinza-card);
+}
+
+.esqueceu-conta {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    margin-bottom: 18px;
+    color: var(--verde-medio);
+    text-decoration: none;
+}
+
+.esqueceu-conta:hover {
+    color: var(--verde-hover);
+}
+
+.botao-acao {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--verde-escuro);
+    color: var(--cinza-card);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-acao:hover {
+    background-color: var(--verde-hover);
+    color: var(--verde-escuro);
+}
+
+.conteudo-aba {
+    display: none;
+}
+
+.conteudo-aba.ativa {
+    display: block;
+}
+
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cinza-card);
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-80%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cinza-texto);
+}
+
+.mensagem, .erro-campo {
+    margin-bottom: 5px;
+    font-size: 11px;
+    color: var(--cinza-titulo);
+}

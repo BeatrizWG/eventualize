@@ -1,0 +1,13 @@
+:root {
+  --verde-escuro: rgb(7, 58, 53);
+  --verde-medio: rgb(12, 92, 84);
+  --verde-acao: rgb(24, 223, 191);
+  --verde-hover: rgb(118, 232, 213);
+
+  --cinza-bg: rgb(245, 246, 247);
+  --cinza-card: rgb(230, 232, 234);
+  --cinza-texto: rgb(120, 120, 120);
+  --cinza-titulo: rgb(45, 45, 45);
+
+  --sombra: rgba(0, 0, 0, 0.35);
+}
