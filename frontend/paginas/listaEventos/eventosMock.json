@@ -1,0 +1,88 @@
+{
+  "eventos": [
+    {
+      "idEvento": 1,
+      "titulo": "Workshop de Inteligência Artificial",
+      "data": "2024-03-15",
+      "local": "Auditório Central - Campus I",
+      "descricao": "Workshop sobre os fundamentos e aplicações práticas de Inteligência Artificial no contexto acadêmico e profissional.",
+      "organizador": {
+        "id": 1,
+        "nome": "Prof. Dr. João Silva",
+        "email": "joao.silva@uepb.edu.br",
+        "matricula": "ORG001"
+      },
+      "inscricoes": []
+    },
+    {
+      "idEvento": 2,
+      "titulo": "Semana de Ciência e Tecnologia",
+      "data": "2024-04-20",
+      "local": "Centro de Convenções - Campus II",
+      "descricao": "Evento anual que reúne pesquisadores, estudantes e profissionais para apresentação de trabalhos científicos e palestras.",
+      "organizador": {
+        "id": 2,
+        "nome": "Prof. Dra. Maria Santos",
+        "email": "maria.santos@uepb.edu.br",
+        "matricula": "ORG002"
+      },
+      "inscricoes": []
+    },
+    {
+      "idEvento": 3,
+      "titulo": "Palestra: Empreendedorismo Digital",
+      "data": "2024-03-25",
+      "local": "Sala 101 - Bloco A",
+      "descricao": "Palestra sobre oportunidades e desafios do empreendedorismo na era digital, com cases de sucesso.",
+      "organizador": {
+        "id": 3,
+        "nome": "Prof. Carlos Oliveira",
+        "email": "carlos.oliveira@uepb.edu.br",
+        "matricula": "ORG003"
+      },
+      "inscricoes": []
+    },
+    {
+      "idEvento": 4,
+      "titulo": "Minicurso de Desenvolvimento Web",
+      "data": "2024-04-10",
+      "local": "Laboratório de Informática - Bloco B",
+      "descricao": "Minicurso prático sobre desenvolvimento web moderno, abordando HTML5, CSS3, JavaScript e frameworks.",
+      "organizador": {
+        "id": 1,
+        "nome": "Prof. Dr. João Silva",
+        "email": "joao.silva@uepb.edu.br",
+        "matricula": "ORG001"
+      },
+      "inscricoes": []
+    },
+    {
+      "idEvento": 5,
+      "titulo": "Feira de Estágios e Oportunidades",
+      "data": "2024-05-05",
+      "local": "Ginásio Poliesportivo",
+      "descricao": "Feira que conecta estudantes com empresas locais e regionais, oferecendo oportunidades de estágio e emprego.",
+      "organizador": {
+        "id": 4,
+        "nome": "Prof. Ana Costa",
+        "email": "ana.costa@uepb.edu.br",
+        "matricula": "ORG004"
+      },
+      "inscricoes": []
+    },
+    {
+      "idEvento": 6,
+      "titulo": "Simpósio de Pesquisa em Educação",
+      "data": "2024-04-30",
+      "local": "Auditório do Centro de Educação",
+      "descricao": "Simpósio para discussão de pesquisas e práticas inovadoras na área de educação.",
+      "organizador": {
+        "id": 2,
+        "nome": "Prof. Dra. Maria Santos",
+        "email": "maria.santos@uepb.edu.br",
+        "matricula": "ORG002"
+      },
+      "inscricoes": []
+    }
+  ]
+}

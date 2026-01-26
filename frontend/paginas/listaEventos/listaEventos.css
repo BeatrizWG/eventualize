@@ -1,0 +1,117 @@
+@import url('../../recursos/cores/cores.css');
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../recursos/fontes/Inter/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../recursos/fontes/Inter/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--verde-escuro);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: var(--verde-escuro);
+}
+
+.container h1 {
+    color: var(--cinza-bg);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#eventos-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.evento-card {
+    background-color: var(--cinza-bg);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 40px var(--sombra);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.evento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px var(--sombra);
+}
+
+.evento-card h2 {
+    color: var(--cinza-titulo);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.evento-card .evento-data {
+    color: var(--verde-acao);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.evento-card .evento-local {
+    color: var(--cinza-texto);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.evento-card .evento-descricao {
+    color: var(--cinza-texto);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.evento-card .evento-organizador {
+    color: var(--cinza-texto);
+    font-size: 12px;
+    font-style: italic;
+    border-top: 1px solid var(--cinza-card);
+    padding-top: 12px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #eventos-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
