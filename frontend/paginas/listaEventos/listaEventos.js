@@ -1,18 +1,12 @@
-/**
- * Script principal para exibir a lista de eventos
- */
 
-// Aguarda o carregamento completo da página e dos dados
+
 document.addEventListener('DOMContentLoaded', async () => {
-    // Aguarda um pouco para garantir que o mocker carregou os dados
     await new Promise(resolve => setTimeout(resolve, 100));
     
     exibirEventos();
 });
 
-/**
- * Exibe todos os eventos na tela
- */
+
 function exibirEventos() {
     const container = document.getElementById('eventos-container');
     const eventos = eventosMocker.obterTodosEventos();
@@ -30,11 +24,6 @@ function exibirEventos() {
     container.innerHTML = eventos.map(evento => criarCardEvento(evento)).join('');
 }
 
-/**
- * Cria o HTML de um card de evento
- * @param {Object} evento - Objeto do evento
- * @returns {string} HTML do card
- */
 function criarCardEvento(evento) {
     const dataFormatada = formatarData(evento.data);
     const organizadorNome = evento.organizador?.nome || 'Organizador não informado';
@@ -50,11 +39,6 @@ function criarCardEvento(evento) {
     `;
 }
 
-/**
- * Formata a data no formato brasileiro
- * @param {string} dataISO - Data no formato ISO (YYYY-MM-DD)
- * @returns {string} Data formatada (DD/MM/YYYY)
- */
 function formatarData(dataISO) {
     if (!dataISO) return 'Data não informada';
     
@@ -66,11 +50,7 @@ function formatarData(dataISO) {
     return `${dia}/${mes}/${ano}`;
 }
 
-/**
- * Escapa caracteres HTML para prevenir XSS
- * @param {string} texto - Texto a ser escapado
- * @returns {string} Texto escapado
- */
+
 function escapeHtml(texto) {
     if (!texto) return '';
     
@@ -79,7 +59,6 @@ function escapeHtml(texto) {
     return div.innerHTML;
 }
 
-// Exporta funções para uso externo se necessário
 window.listaEventos = {
     exibirEventos,
     formatarData,
