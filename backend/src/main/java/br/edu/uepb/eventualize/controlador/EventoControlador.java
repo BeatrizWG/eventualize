@@ -20,6 +20,29 @@ public class EventoControlador {
     @PostMapping
     public ResponseEntity<Evento> cadastrar(@RequestBody @Valid CadastroEventoDTO dados) {
         Evento novoEvento = eventoServico.salvarEvento(dados);
-        return ResponseEntity.ok(novoEvento);
+        return ResponseEntity.status(201).body(novoEvento);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Evento> editarEvento(
+            @PathVariable Long id,
+            @RequestBody @Valid CadastroEventoDTO dados) {
+
+        try {
+            Evento eventoAtualizado = eventoServico.editarEvento(id, dados);
+            return ResponseEntity.ok(eventoAtualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluirEvento(@PathVariable Long id) {
+        try {
+            eventoServico.excluirEvento(id);
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
