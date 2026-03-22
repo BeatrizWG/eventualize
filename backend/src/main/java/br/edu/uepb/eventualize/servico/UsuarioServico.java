@@ -25,6 +25,10 @@ public class UsuarioServico {
 
         Usuario usuario;
 
+        if (repositorio.findByEmail(dto.getEmail()).isPresent()) {
+            throw new RuntimeException("Este e-mail já está cadastrado!");
+        }
+
         int tamanho = dto.getMatricula().trim().length();
 
         if (tamanho == 7) {
@@ -49,7 +53,7 @@ public class UsuarioServico {
 
         repositorio.save(usuario);
     }
-     
+
     public Usuario autenticarUsuario(String email, String senhaInformada) {
 
         Usuario usuario = repositorio.findByEmail(email)

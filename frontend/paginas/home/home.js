@@ -129,8 +129,15 @@ document.getElementById("btnCadastro").addEventListener("click", async () => {
         msg.classList.add("sucesso");
         limparCadastro();
     } else {
-        const erros = await response.json();
-        mostrarErrosCampos(erros);
+        const contentType = response.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+            const erros = await response.json();
+            mostrarErrosCampos(erros, "");
+        } else {
+            msg.textContent = await response.text();
+            msg.classList.add("erro");
+        }
     }
 });
 
