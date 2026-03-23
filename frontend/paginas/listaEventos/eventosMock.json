@@ -4,7 +4,7 @@
       "idEvento": 1,
       "titulo": "Workshop de Inteligência Artificial",
       "data": "2024-03-15",
-      "local": "Auditório Central - Campus I",
+      "local": "Auditório Central - Campus VII",
       "descricao": "Workshop sobre os fundamentos e aplicações práticas de Inteligência Artificial no contexto acadêmico e profissional.",
       "organizador": {
         "id": 1,
@@ -18,7 +18,7 @@
       "idEvento": 2,
       "titulo": "Semana de Ciência e Tecnologia",
       "data": "2024-04-20",
-      "local": "Centro de Convenções - Campus II",
+      "local": "Campus VII - UEPB",
       "descricao": "Evento anual que reúne pesquisadores, estudantes e profissionais para apresentação de trabalhos científicos e palestras.",
       "organizador": {
         "id": 2,
@@ -30,14 +30,14 @@
     },
     {
       "idEvento": 3,
-      "titulo": "Palestra: Empreendedorismo Digital",
+      "titulo": "Palestra: Mulheres Da Ciência",
       "data": "2024-03-25",
       "local": "Sala 101 - Bloco A",
-      "descricao": "Palestra sobre oportunidades e desafios do empreendedorismo na era digital, com cases de sucesso.",
+      "descricao": "Palestra sobre oportunidades e desafios da mulher na ciência e tecnologia, com cases de sucesso.",
       "organizador": {
         "id": 3,
-        "nome": "Prof. Carlos Oliveira",
-        "email": "carlos.oliveira@uepb.edu.br",
+        "nome": "Prof. Rosângela Medeiros",
+        "email": "rosangela.medeiros@uepb.edu.br",
         "matricula": "ORG003"
       },
       "inscricoes": []
@@ -60,7 +60,7 @@
       "idEvento": 5,
       "titulo": "Feira de Estágios e Oportunidades",
       "data": "2024-05-05",
-      "local": "Ginásio Poliesportivo",
+      "local": "Quadra Poliesportiva - Campus VII",
       "descricao": "Feira que conecta estudantes com empresas locais e regionais, oferecendo oportunidades de estágio e emprego.",
       "organizador": {
         "id": 4,
@@ -74,7 +74,7 @@
       "idEvento": 6,
       "titulo": "Simpósio de Pesquisa em Educação",
       "data": "2024-04-30",
-      "local": "Auditório do Centro de Educação",
+      "local": "Auditório Central - Campus VII",
       "descricao": "Simpósio para discussão de pesquisas e práticas inovadoras na área de educação.",
       "organizador": {
         "id": 2,

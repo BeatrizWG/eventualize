@@ -53,9 +53,10 @@ class EventosMocker {
             ...this.eventos[index],
             ...dadosAtualizados,
             idEvento: idEvento 
-        
+        }
         return this.eventos[index];
     }
+    
 
     
     removerEvento(idEvento) {
